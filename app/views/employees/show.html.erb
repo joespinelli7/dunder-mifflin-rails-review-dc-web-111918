@@ -1,0 +1,16 @@
+<h1><%= @employee.full_name %></h1>
+<label>Alias: <%= @employee.alias %></label><br><br>
+<label>Title: <%= @employee.title %></label><br><br>
+<label>Office: <%= @employee.office %></label><br><br>
+<label>Dog: <%= link_to @employee.dog.name, dog_path %></label><br><br>
+<img src="<%= @employee.img_url %>">
+
+<br/>
+<h3> Edit this employee: </h3>
+<%= link_to "Click here", edit_employee_path %>
+<h3>Back to Index Page: </h3>
+<%= link_to "Index page", employees_path %>
+<h3> Remove employee: </h3>
+<%= form_tag @employee, method: "DELETE" do %>
+  <%= submit_tag "Delete this employee" %>
+<% end %>
