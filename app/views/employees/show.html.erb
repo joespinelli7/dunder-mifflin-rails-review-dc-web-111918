@@ -2,7 +2,8 @@
 <label>Alias: <%= @employee.alias %></label><br><br>
 <label>Title: <%= @employee.title %></label><br><br>
 <label>Office: <%= @employee.office %></label><br><br>
-<label>Dog: <%= link_to @employee.dog.name, dog_path %></label><br><br>
+<label>Dog: <%= link_to @employee.dog.name, @employee.dog %></label><br><br>
+
 <img src="<%= @employee.img_url %>">
 
 <br/>

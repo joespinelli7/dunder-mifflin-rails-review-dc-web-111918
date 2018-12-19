@@ -4,6 +4,6 @@
 
 <h2>Employee(s) name:</h2>
 <ul> <% @dog.employees.each do |employee| %>
-  <li><%= link_to employee.first_name + " " + employee.last_name, employee %></li><br>
+  <li><%= link_to employee.full_name, employee %></li><br>
   <% end %>
 </ul>

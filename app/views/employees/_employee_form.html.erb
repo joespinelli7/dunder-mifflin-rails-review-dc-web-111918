@@ -1,26 +1,45 @@
 <%= form_for @employee do |f| %>
+
+  #to create error messages for validations
+  <ul>
+    <% if @employee.errors %>
+      <% @employee.errors.full_messages.each do |e| %>
+        <li>
+          <%= e %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+
   <div>
     <%= f.label :first_name %>
     <%= f.text_field :first_name %>
   </div>
+  <br>
   <div>
     <%= f.label :last_name %>
     <%= f.text_field :last_name %>
+  </div>
+    <br>
   <div>
     <%= f.label :alias %>
     <%= f.text_field :alias %>
   </div>
+  <br>
   <div>
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
+  <br>
   <div>
     <%= f.label :office %>
     <%= f.text_field :office %>
   </div>
+  <br>
   <div>
     <%= f.label :dog_id %>
-    <%= f.collection_select(:dog_id, Dog.all, :id, :name, prompt:"pick one")  %>
+    <%= f.collection_select(:dog_id, Dog.all, :id, :name, prompt:"Choose one")  %>
   </div>
+  <br>
     <%= f.submit %>
 <% end %>

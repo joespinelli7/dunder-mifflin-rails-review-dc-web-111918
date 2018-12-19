@@ -14,8 +14,17 @@ class EmployeesController < ApplicationController
 
   def create
     @employee = Employee.new(employee_params)
-    @employee.save
-    redirect_to @employee
+    #old way:
+    #@employee.save
+    #redirect_to @employee
+
+    #refactored:
+    if @employee.valid?
+      @employee.save
+      redirect_to employee_path(@employee)
+    else
+      render :new
+    end
   end
 
   def edit
